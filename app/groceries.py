@@ -7,12 +7,7 @@
 
 import os
 
-
-def to_usd(my_price):
-    """
-    Invoke like this: to_usd(9.99)
-    """
-    return '${:,.2f}'.format(my_price)
+from app.utils import to_usd
 
 
 # checks to see if a products.csv file exists. If not, it uses the default
