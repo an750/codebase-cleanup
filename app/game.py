@@ -6,7 +6,10 @@ from random import choice
 
 
 def determine_winner(user_choice, computer_choice):
-    #return "paper"
+    #docstring for winner determination function
+    """
+    Invoke like this: determine_winner(paper)
+    """
     winners = {
         "rock": {
             "rock": None,
