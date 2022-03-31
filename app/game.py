@@ -8,7 +8,7 @@ from random import choice
 def determine_winner(user_choice, computer_choice):
     #docstring for winner determination function
     """
-    Invoke like this: determine_winner(paper)
+    Invoke like this: determine_winner(u,c)
     """
     winners = {
         "rock": {
