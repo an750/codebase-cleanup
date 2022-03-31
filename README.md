@@ -1,10 +1,10 @@
-# codebase-cleanup-template
+# Codebase Cleanup
 
 To get started with the ["Codebase Cleanup" Exercise](https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/codebase-cleanup/README.md).
 
 ## Setup
 
-Create virtual environment:
+Create and activate a new virtual environment:
 
 ```sh
 conda create -n cleanup-env python=3.8
@@ -19,6 +19,14 @@ Install packages:
 ```sh
 pip install -r requirements.txt
 ```
+
+Copy the default products inventory (then optionally customize the resulting "products.csv" file with your own products as desired):
+
+```sh
+cp data/default_products.csv data/products.csv
+```
+
+
 
 
 ## Configuration
@@ -62,4 +70,12 @@ Run the crypto report:
 
 ```sh
 python -m app.crypto.py
+```
+
+## Testing
+
+Running all tests:
+
+```sh
+pytest
 ```
