@@ -20,6 +20,14 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+Copy the default products inventory (then optionally customize the resulting "products.csv" file with your own products as desired):
+
+```sh
+cp data/default_products.csv data/products.csv
+```
+
+
+
 
 ## Configuration
 
