@@ -1,21 +1,22 @@
 
 # READ INVENTORY OF PRODUCTS
-
-#products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+#products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
 #products_df = read_csv(products_filepath)
 #products = products_df.to_dict("records")
 
 import os
+from pandas import read_csv
 
 
 def to_usd(my_price):
     """
-    Invoke like this: to_usd(9.99)
+    This function formats the parameter, which is a number (float)
+    Invoke like this: to_usd(9.9999)
+    Example return value "$9.99"
     """
     return '${:,.2f}'.format(my_price)
 
-
-# checks to see if a products.csv file exists. If not, it uses the default
+#checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
     csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
@@ -23,16 +24,10 @@ else:
     print("USING DEFAULT PRODUCTS CSV FILE...")
     csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
 
-
-
-from pandas import read_csv
-
 #reads the csv file into products variable
 products = read_csv(csv_filepath)
 #pandas transforms the data into a list of dictionaries
 products = products.to_dict('records')
-
-
 
 # PRINTED INVENTORY REPORT
 
