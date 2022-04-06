@@ -16,14 +16,17 @@ def to_usd(my_price):
     """
     return '${:,.2f}'.format(my_price)
 
+#Simplify CSV filepaths
+custom = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+default = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
+
 #checks to see if a products.csv file exists. If not, it uses the default
-#left code unchanged as suggested
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+    csv_filepath = custom
 else:
     print("USING DEFAULT PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
+    csv_filepath = default
 
 #reads the csv file into products variable
 products = read_csv(csv_filepath)
