@@ -17,6 +17,7 @@ def to_usd(my_price):
     return '${:,.2f}'.format(my_price)
 
 #checks to see if a products.csv file exists. If not, it uses the default
+#left code unchanged as suggested
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
     csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
@@ -37,6 +38,7 @@ print("---------")
 
 all_prices = []
 
+#reduce number of loops
 for p in products:
     print("..." + p["name"] + "   " + to_usd(p["price"]))
     all_prices.append(float(p["price"]))
